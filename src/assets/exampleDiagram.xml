@@ -16,6 +16,7 @@
         <ptn:arc id="Arc_dmsjse4ohwql0hkqheu5w5mhd" source="Transition_1gz1ia23eznomvrfa2sbkzt7p"
             target="Place_0swhqlg5w5s6meb3g0i8aocvz" type="ptn:Arc">
             <ptn:inscription id="Inscription_2">
+                <ptn:inscriptionElement id="InscriptionElement_3" dataClass="DataClass_2" variableName="I" isGenerated="false" />
             </ptn:inscription>
         </ptn:arc>
         <ptn:dataClass id="DataClass_1" name="Order" type="ptn:DataClass" alias="O" valueType="String"/>
