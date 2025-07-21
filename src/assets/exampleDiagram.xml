@@ -19,8 +19,8 @@
                 <ptn:inscriptionElement id="InscriptionElement_3" dataClass="DataClass_2" variableName="I" isGenerated="false" />
             </ptn:inscription>
         </ptn:arc>
-        <ptn:dataClass id="DataClass_1" name="Order" type="ptn:DataClass" alias="O" valueType="String"/>
-        <ptn:dataClass id="DataClass_2" name="Item" type="ptn:DataClass" alias="I" valueType="String"/>
+        <ptn:dataClass id="DataClass_1" name="Order" type="ptn:DataClass" alias="O" valueType="ID"/>
+        <ptn:dataClass id="DataClass_2" name="Item" type="ptn:DataClass" alias="I" valueType="ID"/>
     </ptn:model>
         <ptnDi:diagram
         id="model_1_di">
