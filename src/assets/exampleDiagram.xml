@@ -1,58 +1,11 @@
-<ptn:definitions xmlns:ptn="http://bpt-lab.org/schemas/ptn"
-    xmlns:ptnDi="http://bpt-lab.org/schemas/ptnDi"
+<er:definitions xmlns:er="http://bpt-lab.org/schemas/er"
+    xmlns:erDi="http://bpt-lab.org/schemas/erDi"
     xmlns:dc="https://www.omg.org/spec/BPMN/20100501/DC.xsd">
-    <ptn:model id="model_1"
-        name="Model 1">
-        <ptn:place id="Place_7fgoofwaex2yfnsp5042d7335" name="p1" type="ptn:Place" color="DataClass_1 DataClass_2" />
-        <ptn:transition id="Transition_1gz1ia23eznomvrfa2sbkzt7p" name="t1" type="ptn:Transition" />
-        <ptn:arc id="Arc_0epsbdswet8y5gx5mcwdfh28u" source="Place_7fgoofwaex2yfnsp5042d7335"
-            target="Transition_1gz1ia23eznomvrfa2sbkzt7p" type="ptn:Arc">
-            <ptn:inscription id="Inscription_1">
-                <ptn:inscriptionElement id="InscriptionElement_1" dataClass="DataClass_1" variableName="O" isGenerated="false" />
-                <ptn:inscriptionElement id="InscriptionElement_2" dataClass="DataClass_2" variableName="I" isGenerated="false" />
-            </ptn:inscription>
-        </ptn:arc>
-        <ptn:place id="Place_0swhqlg5w5s6meb3g0i8aocvz" name="p2" type="ptn:Place" color="DataClass_2" />
-        <ptn:arc id="Arc_dmsjse4ohwql0hkqheu5w5mhd" source="Transition_1gz1ia23eznomvrfa2sbkzt7p"
-            target="Place_0swhqlg5w5s6meb3g0i8aocvz" type="ptn:Arc">
-            <ptn:inscription id="Inscription_2">
-                <ptn:inscriptionElement id="InscriptionElement_3" dataClass="DataClass_2" variableName="I" isGenerated="false" />
-            </ptn:inscription>
-        </ptn:arc>
-        <ptn:dataClass id="DataClass_1" name="Order" type="ptn:DataClass" alias="O" valueType="ID"/>
-        <ptn:dataClass id="DataClass_2" name="Item" type="ptn:DataClass" alias="I" valueType="ID"/>
-    </ptn:model>
-        <ptnDi:diagram
+    <er:model id="model_1">
+    </er:model>
+        <erDi:diagram
         id="model_1_di">
-        <ptnDi:plane id="model_1_plane" modelElement="model_1">
-            <ptnDi:diagramShape id="Place_7fgoofwaex2yfnsp5042d7335_di"
-                modelElement="Place_7fgoofwaex2yfnsp5042d7335">
-                <dc:Bounds x="285" y="215" width="50" height="50" />
-                <ptnDi:diagramLabel>
-                    <dc:Bounds x="301" y="272" width="18" height="20" />
-                </ptnDi:diagramLabel>
-            </ptnDi:diagramShape>
-            <ptnDi:diagramShape id="Transition_1gz1ia23eznomvrfa2sbkzt7p_di"
-                modelElement="Transition_1gz1ia23eznomvrfa2sbkzt7p">
-                <dc:Bounds x="385" y="215" width="50" height="50" />
-            </ptnDi:diagramShape>
-            <ptnDi:diagramEdge id="Arc_0epsbdswet8y5gx5mcwdfh28u_di"
-                modelElement="Arc_0epsbdswet8y5gx5mcwdfh28u">
-                <ptnDi:waypoint x="335" y="240" />
-                <ptnDi:waypoint x="385" y="240" />
-            </ptnDi:diagramEdge>
-            <ptnDi:diagramShape id="Place_0swhqlg5w5s6meb3g0i8aocvz_di"
-                modelElement="Place_0swhqlg5w5s6meb3g0i8aocvz">
-                <dc:Bounds x="485" y="215" width="50" height="50" />
-                <ptnDi:diagramLabel>
-                    <dc:Bounds x="501" y="272" width="18" height="20" />
-                </ptnDi:diagramLabel>
-            </ptnDi:diagramShape>
-            <ptnDi:diagramEdge id="Arc_dmsjse4ohwql0hkqheu5w5mhd_di"
-                modelElement="Arc_dmsjse4ohwql0hkqheu5w5mhd">
-                <ptnDi:waypoint x="435" y="240" />
-                <ptnDi:waypoint x="485" y="240" />
-            </ptnDi:diagramEdge>
-        </ptnDi:plane>
-    </ptnDi:diagram>
-</ptn:definitions>
+        <erDi:plane id="model_1_plane" modelElement="model_1">
+        </erDi:plane>
+    </erDi:diagram>
+</er:definitions>

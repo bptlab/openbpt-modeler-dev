@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import exampleDiagram from './assets/exampleDiagram.xml';
-import CustomModeler from "openbpt-typed-pn-variants-modeler/lib/CustomModeler";
-import "openbpt-typed-pn-variants-modeler/assets/tpn-js.css";
+import CustomModeler from "@bptlab/openbpt-modeler-er/lib/CustomModeler";
+import "@bptlab/openbpt-modeler-er/assets/er-js.css";
 
 const customModeler = new CustomModeler({
   container: document.querySelector('#pn-canvas'),
