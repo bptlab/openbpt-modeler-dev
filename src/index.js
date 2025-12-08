@@ -1,83 +1,92 @@
-import $ from 'jquery';
-import exampleDiagram from './assets/exampleDiagram.xml';
-import CustomModeler from "openbpt-typed-pn-variants-modeler/lib/CustomModeler";
+import $ from "jquery";
+import exampleDiagram from "./assets/exampleDiagram.xml";
+import CustomModeler from "openbpt-typed-pn-variants-modeler";
 import "openbpt-typed-pn-variants-modeler/assets/tpn-js.css";
 
 const customModeler = new CustomModeler({
-  container: document.querySelector('#pn-canvas'),
+  container: document.querySelector("#pn-canvas"),
   declarationsPanel: {
-    parent: '#properties-panel'
-  }
+    parent: "#properties-panel",
+  },
 });
 
 async function createNewDiagram(diagram) {
   try {
     await customModeler.importXML(diagram);
   } catch (err) {
-      console.error(err);
+    console.error(err);
   }
 }
 
-$(function() {
+$(function () {
   createNewDiagram(exampleDiagram);
 });
 
-function download(name, data, encoding='charset=UTF-8') {
-    var encodedData = encodeURIComponent(data);
-    var link = document.createElement("a");
-    document.body.appendChild(link);
+function download(name, data, encoding = "charset=UTF-8") {
+  var encodedData = encodeURIComponent(data);
+  var link = document.createElement("a");
+  document.body.appendChild(link);
 
-    const fileType = name.split('.').pop();
+  const fileType = name.split(".").pop();
 
-    $(link).attr({
-        'href': 'data:application/' + fileType + ';' + encoding + ',' + encodedData,
-        'download': name
-    });
+  $(link).attr({
+    href: "data:application/" + fileType + ";" + encoding + "," + encodedData,
+    download: name,
+  });
 
-    link.click();
-    document.body.removeChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
 
-function upload(callback, encoding='UTF-8') {
-    var fileInput = document.createElement("input");
-    document.body.appendChild(fileInput);
+function upload(callback, encoding = "UTF-8") {
+  var fileInput = document.createElement("input");
+  document.body.appendChild(fileInput);
 
-    $(fileInput).attr({ 'type': 'file' }).on('change', function (e) {
-        var file = e.target.files[0];
-        var reader = new FileReader();
-        if (encoding === 'base64') {
-            reader.readAsDataURL(file);
-        } else {
-            reader.readAsText(file, encoding);
-        }
-        reader.onload = function (evt) {
-            callback(evt.target.result);
-        }
-    }).trigger('click');
+  $(fileInput)
+    .attr({ type: "file" })
+    .on("change", function (e) {
+      var file = e.target.files[0];
+      var reader = new FileReader();
+      if (encoding === "base64") {
+        reader.readAsDataURL(file);
+      } else {
+        reader.readAsText(file, encoding);
+      }
+      reader.onload = function (evt) {
+        callback(evt.target.result);
+      };
+    })
+    .trigger("click");
 
-    document.body.removeChild(fileInput);
+  document.body.removeChild(fileInput);
 }
 
-document.getElementById('newButton').addEventListener('click', () => customModeler.createNew());
+document
+  .getElementById("newButton")
+  .addEventListener("click", () => customModeler.createNew());
 
-document.getElementById('openXmlButton').addEventListener('click', () => upload((data) => {
-  importFromXmlFile(data);
-}));
+document.getElementById("openXmlButton").addEventListener("click", () =>
+  upload((data) => {
+    importFromXmlFile(data);
+  })
+);
 
 // document.getElementById('openPnmlButton').addEventListener('click', () => upload((data) => {
 //   importFromPnmlFile(data);
 // }));
 
-document.getElementById('saveXmlButton').addEventListener('click', () => exportXML().then(xml => {
-  download('PetriNet.xml', xml);
-}));
+document.getElementById("saveXmlButton").addEventListener("click", () =>
+  exportXML().then((xml) => {
+    download("PetriNet.xml", xml);
+  })
+);
 
 // document.getElementById('savePnmlButton').addEventListener('click', () => exportPNML().then(pnml => {
 //   download('PetriNet.pnml', pnml);
 // }));
 
 async function exportXML() {
-  const XML = (await customModeler.saveXML({format: true})).xml;
+  const XML = (await customModeler.saveXML({ format: true })).xml;
   return XML;
 }
 
@@ -94,10 +103,10 @@ async function importFromXmlFile(file) {
 //   await pnModeler.importPNML(file);
 // }
 
-const canvas = document.getElementById("pn-canvas")
+const canvas = document.getElementById("pn-canvas");
 canvas.tabIndex = 0;
-canvas.addEventListener('mouseenter', event => {
-  if (document.activeElement.className !== 'djs-direct-editing-content') {
+canvas.addEventListener("mouseenter", (event) => {
+  if (document.activeElement.className !== "djs-direct-editing-content") {
     canvas.focus();
   }
 });
