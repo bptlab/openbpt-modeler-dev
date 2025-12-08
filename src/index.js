@@ -1,6 +1,6 @@
 import $ from "jquery";
 import exampleDiagram from "./assets/exampleDiagram.xml";
-import CustomModeler from "openbpt-typed-pn-variants-modeler";
+import CustomModeler from "openbpt-typed-pn-variants-modeler/dist/lib/CustomModeler";
 import "openbpt-typed-pn-variants-modeler/assets/tpn-js.css";
 
 const customModeler = new CustomModeler({
