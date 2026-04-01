@@ -1,13 +1,18 @@
 import $ from "jquery";
 import exampleDiagram from "./assets/exampleDiagram.xml";
-import CustomModeler from "openbpt-typed-pn-variants-modeler/dist/lib/CustomModeler";
-import "openbpt-typed-pn-variants-modeler/assets/tpn-js.css";
+import CustomModeler from "@bptlab/openbpt-modeler-typed-pn-variants/CustomModeler";
+import "@bptlab/openbpt-modeler-typed-pn-variants/assets/tpn-js.css";
 
 const customModeler = new CustomModeler({
   container: document.querySelector("#pn-canvas"),
   declarationsPanel: {
     parent: "#properties-panel",
   },
+  textRenderer: {
+    defaultStyle: {
+      fontSize: '19',
+    }
+  }
 });
 
 async function createNewDiagram(diagram) {
