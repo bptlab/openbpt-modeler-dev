@@ -96,7 +96,7 @@ async function exportXML() {
 }
 
 async function exportPNML() {
-  const pnml = (await customModeler.savePNML({format: true})).pnml;
+  const pnml = (await customModeler.savePNML({format: true}));
   return pnml;
 }
 
