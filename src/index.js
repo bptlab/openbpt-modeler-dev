@@ -10,7 +10,7 @@ const customModeler = new CustomModeler({
   },
   textRenderer: {
     defaultStyle: {
-      fontSize: '19',
+      fontSize: 19,
     }
   }
 });
