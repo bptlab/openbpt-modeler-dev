@@ -2,6 +2,7 @@ import $ from "jquery";
 import exampleDiagram from "./assets/exampleDiagram.xml";
 import CustomModeler from "@bptlab/openbpt-modeler-typed-pn-variants/CustomModeler";
 import "@bptlab/openbpt-modeler-typed-pn-variants/assets/tpn-js.css";
+import "@bpmn-io/properties-panel/dist/assets/properties-panel.css";
 
 const customModeler = new CustomModeler({
   container: document.querySelector("#pn-canvas"),
